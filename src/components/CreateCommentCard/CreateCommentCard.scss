@@ -1,0 +1,28 @@
+.create-comment-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+
+    #comment-text-input{
+        width: 100%;
+        border: none;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        color: #fff;
+        border-bottom: 1px solid #ccc;
+
+        &:focus{
+            outline: none;
+            border-bottom: #BA68C8 2px solid;
+            transition: 0.2s ease;
+        }
+    }
+
+    .btn{
+        width: 50%;
+        margin: 0.5rem 0;
+        color: #fff;
+        text-transform: uppercase;
+    }
+}

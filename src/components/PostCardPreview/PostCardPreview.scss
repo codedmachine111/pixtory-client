@@ -1,0 +1,104 @@
+.post-card-preview-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: left;
+    width: 30%;
+    height: 65vh;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+    margin: 0.5rem 0;
+    cursor: pointer;
+  
+    .post-card-preview-title {
+      width: 100%;
+      font-size: 1.5rem;
+      color: #fff;
+      text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      background: none;
+      text-transform: capitalize;
+      text-align: left;
+    }
+    .post-card-preview-image{
+      width: 100%;
+      height: 45vh;
+      margin-bottom: 0.5rem;
+      
+      #post-card-preview-image-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .post-card-preview-desc {
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      background: none;
+      opacity: 0.8;
+      width: 100%;
+      text-align: left;
+    }
+    .post-card-preview-footer{
+
+      width: 100%;
+      background: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5%;
+
+      .post-card-likes{
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6%;
+        background: none;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+      }
+      #heart-icon{
+        color: #fff;
+        background: none;
+      }
+      #heart-icon-fill{
+        color: #fff;
+        background: none;
+      }
+      p{
+        opacity: 0.9;
+        font-size: 0.8rem;
+        width: 100%;
+        color: #fff;
+        background: none;
+      }
+    }
+  
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #like-icon{
+      background: none;
+    }
+    #unlike-icon{
+      background: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .post-card-preview-container {
+      width: 40%;
+      min-height: 30vh;
+      margin: 0.5rem 0;
+    }
+  } 
