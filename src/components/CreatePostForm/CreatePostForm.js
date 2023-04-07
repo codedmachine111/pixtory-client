@@ -17,9 +17,9 @@ export const CreatePostForm = () => {
     file: null,
   };
   const validationSchema = Yup.object({
-    file: Yup.mixed().test("filesize", "File size is too large", (value)=>{
-      return value && value.size <= 5242880 // less than 5MB
-    }),
+    // file: Yup.mixed().test("filesize", "File size is too large", (value)=>{
+    //   return value && value.size <= 5242880 // less than 5MB
+    // }),
     title: Yup.string().required("Required"),
     postText: Yup.string().required("Required"),
   });
