@@ -51,13 +51,12 @@ export const Profile = () => {
                 return (
                   <PostCardPreview
                   postNum={userPosts.indexOf(post) + 1}
-                  title={post.title.length > 15 ? post.title.slice(0, 15) + "..." : post.title}
+                  title={post.title.length > 25 ? post.title.slice(0, 15) + "..." : post.title}
                   desc={post.postText.slice(0, 60) + "..."}
                   username={post.username}
                   id={post.id}
                   key={post.id}
                   like={false}
-                  color={getRandomColor()}
                   />
                 );
               })

@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: left;    
-    border: 1px solid #BA68C8;
     padding: 2rem;
     border-radius: 10px;
     width: 30%;
@@ -30,15 +29,15 @@
         }
     }
     #signup-input{
-        width: 100%;
-        border: none;
+        width: 90%;
+        border: 1.5px solid rgb(255, 255, 255);
         color: #fff;
         padding: 0.5rem;
         margin: 0.5rem 0;
-        border-bottom: 1px solid #ccc;
 
         &:focus{
             outline: none;
+            border: none;
             border-bottom: #BA68C8 2px solid;
             transition: 0.2s ease;
         }
@@ -46,8 +45,11 @@
 
     .btn{
         width: 50%;
-        color: #fff;
+        background-color: rgb(255, 255, 255);
+        color: #0f0f0f;
         margin: 1rem 0;
+        font-weight: 600;
+        border-radius: 0px;
     }
     #auth-redirect{
         text-align: center;

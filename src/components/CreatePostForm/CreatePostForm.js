@@ -28,28 +28,24 @@ export const CreatePostForm = () => {
     const formData = new FormData();
     formData.append("title", values.title);
     formData.append("postText", values.postText);
-    formData.append("file", fileObject);    
+    formData.append("file", fileObject);
 
     axios
-  .post(
-    "http://localhost:3001/posts",
-    formData,
-    {
-      headers: {
-        accessToken: localStorage.getItem("token"),
-      },
-    }
-  )
-  .then((response) => {
-    console.log(response.data);
-    if (response.data.message === "Post created!") {
-      alert("Post created!");
-      resetFormFields();
-      navigate("/posts");
-    } else {
-      alert("Something went wrong!");
-    }
-  });
+      .post("http://localhost:3001/posts", formData, {
+        headers: {
+          accessToken: localStorage.getItem("token"),
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.message === "Post created!") {
+          alert("Post created!");
+          resetFormFields();
+          navigate("/posts");
+        } else {
+          alert("Something went wrong!");
+        }
+      });
   };
 
   return (
@@ -61,6 +57,7 @@ export const CreatePostForm = () => {
         encType="multipart/form-data"
       >
         <Form className="create-post-form" encType="multipart/form-data">
+          <label id="input-label">Select a picture</label>
           <input
             type="file"
             name="file"
@@ -70,8 +67,10 @@ export const CreatePostForm = () => {
               setFileObject(e.target.files[0]);
             }}
           />
+          <label id="input-label">Give a title</label>
           <Field id="input-create-post" name="title" placeholder="Post Title" />
           <ErrorMessage name="title" component="span" className="error" />
+          <label id="input-label">Describe your story</label>
           <Field
             id="input-create-post-text"
             name="postText"
@@ -92,5 +91,3 @@ export const CreatePostForm = () => {
     </>
   );
 };
-
-

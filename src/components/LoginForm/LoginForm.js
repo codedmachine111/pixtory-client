@@ -45,13 +45,14 @@ export const LoginForm = (props) => {
     <>
       <Formik initialValues={initialValues} onSubmit={onLoginSubmitHandler}>
         <Form className="login-form">
-          <h2>Stories</h2>
+          <h2>Have an account?</h2>
           <p><span id="bold">Login</span> to enter and share your stories with your friends.</p>
           <Field
             id="login-input"
             name="username"
             type="text"
             placeholder="Username"
+            required={true}
           />
           <ErrorMessage name="username" />
           <Field
@@ -59,6 +60,7 @@ export const LoginForm = (props) => {
             name="password"
             type="password"
             placeholder="Password"
+            required={true}
           />
           <ErrorMessage name="password" />
 

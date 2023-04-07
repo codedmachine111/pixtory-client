@@ -5,8 +5,7 @@ import { useContext, useEffect } from "react";
 import { UserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCameraRetro } from "@fortawesome/free-solid-svg-icons"
+import logo from '../../assets/logo.png'
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -35,7 +34,7 @@ export const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-      <FontAwesomeIcon icon={faCameraRetro} id="logo-icon"/>
+      <img src={logo} alt="" id="logo-icon"/>
       </div>
 
       <div className="nav-menu">

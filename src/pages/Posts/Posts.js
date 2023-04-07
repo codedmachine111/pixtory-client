@@ -71,9 +71,24 @@ export const Posts = () => {
             {listOfPosts.length > 0 ? (
               listOfPosts.map((post) => {
                 return (
+                  // <PostCardPreview
+                  //   postNum={listOfPosts.indexOf(post) + 1}
+                  //   title={post.title.length > 15 ? post.title.slice(0, 15) + "..." : post.title}
+                  //   desc={post.postText.slice(0, 60) + "..."}
+                  //   username={post.username}
+                  //   id={post.id}
+                  //   likes={post.Likes.length}
+                  //   key={post.id}
+                  //   like={true}
+                  //   className={
+                  //     likedPosts.includes(post.id) ? "unlikeBtn" : "likeBtn"
+                  //   }
+                  //   color={getRandomColor()}
+                  // />
                   <PostCardPreview
                     postNum={listOfPosts.indexOf(post) + 1}
-                    title={post.title.length > 15 ? post.title.slice(0, 15) + "..." : post.title}
+                    title={post.title}
+                    // title={post.title.length > 15 ? post.title.slice(0, 15) + "..." : post.title}
                     desc={post.postText.slice(0, 60) + "..."}
                     username={post.username}
                     id={post.id}
@@ -83,7 +98,6 @@ export const Posts = () => {
                     className={
                       likedPosts.includes(post.id) ? "unlikeBtn" : "likeBtn"
                     }
-                    color={getRandomColor()}
                   />
                 );
               })

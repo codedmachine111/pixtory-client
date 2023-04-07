@@ -1,27 +1,23 @@
 .create-post-form{
     width: 60%;
-    border: 2px solid #BA68C8;
-    border-radius: 10px;
+    border: 0.5px solid rgb(88, 88, 88);
     padding: 2rem;
     margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
     
     #input-create-post, #input-create-post-text{
         width: 85%;
         padding: 0.5rem;
         font-size: 1rem;
-        border:none;
-        border-bottom: 1px solid #ccc;
         resize: none;
-        margin: 1rem 0;
+        margin: 0 0 1.5rem 0;
         color: #fff;
         outline: none;
-        border: 0.5px solid  #BA68C8;
-        border-radius: 10px;
+        border: 2px solid  #fff;
 
         &:focus{
-            border: none;
-            border-bottom: 0.5px solid  #BA68C8;
-            border-radius: 0px;
+            border: 0.5px solid  #fff;
             transition: 0.5s ease;
         }
     }
@@ -41,13 +37,18 @@
 
         &:focus{
             border: 0.5px solid  #fff;
-            border-radius: 10px;
             transition: 0.5s ease;
         }
     }
     .btn{
         width: 50%;
-        color: #fff;
+        color: #0f0f0f;
         margin: 1rem 0;
+    }
+
+    #input-label{
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 }

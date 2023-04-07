@@ -42,7 +42,7 @@ export const SignUpForm = (props) => {
     <>
       <Formik initialValues={initialValues} onSubmit={onSignupSubmitHandler}>
         <Form className="signup-form">
-          <h2>Stories</h2>
+          <h2>Create new account</h2>
           <p>
             <span id="bold">Signup</span> to create an account and share your stories with your
             friends.

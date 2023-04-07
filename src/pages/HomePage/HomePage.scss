@@ -7,30 +7,64 @@
     height: auto;
     width: 100%;
     color: #fff;
-    background: #1b1b1b;;
-    padding: 1rem 2rem;
+    background: #0f0f0f;;
     
     .home-content{
-        width: 40%;
-        display: flex;
-        padding: 1rem;
-        flex-direction: row; 
-        justify-content: right;
+       width: 55%;
+       background-image: url("../../assets/homepage-bg.jpg");
+       background-position: center;
+       background-size: cover;
+       height: 100vh;
 
         #mobile-app{
             width: 60%;
         }
+
+        .content{
+            background: none;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.71);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+            h1,p{
+                background: none;
+            }
+            h1{
+                font-size: 6rem;
+            }
+            p{
+                opacity: 0.8;
+            }
+
+            a{
+                background: none;
+                margin: 0.5rem 0;
+                width: 25%;
+                .btn{
+                    width: 100%;
+                    border-radius: 0;
+                }
+            }
+        }
     }
     .home-timer-container{
-        width: 50%;
+        width: 45%;
         height: 100vh;
         padding: 5rem 0;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: left;
+        align-items: center;
 
+        #logo-icon{
+            width: 5rem;
+        }
         form{
-            width: 60%;
+            width: 70%;
         }
 
     }
@@ -51,7 +85,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 1rem 2rem;
 
         .home-content{
             width: 100%;
@@ -59,7 +92,24 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 1rem;
+            min-height: 100vh;
+            height: auto;
+
+            .content{
+                h1{
+                    font-size: 5rem;
+                }
+                p{
+                    width: 100%;
+                    font-size: 0.8rem;
+                }
+                a{
+                    width: 50%;
+                    .btn{
+                        width: 100%;
+                    }
+                }
+            }
 
             #mobile-app{
                 display: none;

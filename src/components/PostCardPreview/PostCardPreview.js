@@ -70,7 +70,6 @@ export const PostCardPreview = (props) => {
       style={{ background: props.color }}
       onClick={() => navigate(`/post/${props.id}`)}
     >
-      <h2 className="post-card-preview-title">{props.title}</h2>
       <div className="post-card-preview-image">
         <img
           src={image ? URL.createObjectURL(image) : null}
@@ -78,7 +77,9 @@ export const PostCardPreview = (props) => {
           id="post-card-preview-image-img"
         />
       </div>
-      <p className="post-card-preview-desc">{props.desc}</p>
+      <h2 className="post-card-preview-title">{props.title}</h2>
+
+      {/* <p className="post-card-preview-desc">{props.desc}</p> */}
 
       <div className="post-card-preview-footer">
         <p>{props.username}</p>
