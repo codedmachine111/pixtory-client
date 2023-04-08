@@ -11,7 +11,7 @@ export const CommentCard = (props) => {
   const navigate = useNavigate();
 
   const onDeleteHandler = ()=>{
-    axios.delete(`http://localhost:3001/comments/${props.id}`,{
+    axios.delete(`https://pixtory-server.vercel.app/comments/${props.id}`,{
         headers:{
             accessToken: localStorage.getItem("token")
         }

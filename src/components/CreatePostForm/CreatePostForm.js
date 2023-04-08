@@ -34,7 +34,7 @@ export const CreatePostForm = () => {
     formData.append("file", fileObject);
 
     axios
-      .post("http://localhost:3001/posts", formData, {
+      .post("https://pixtory-server.vercel.app/posts", formData, {
         headers: {
           accessToken: localStorage.getItem("token"),
         },

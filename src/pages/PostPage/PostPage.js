@@ -13,13 +13,13 @@ export const PostPage = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((res) => {
+    axios.get(`https://pixtory-server.vercel.app/posts/byId/${id}`).then((res) => {
       setPostObject(res.data);
     });
   }, [id]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/comments/${id}`).then((res) => {
+    axios.get(`https://pixtory-server.vercel.app/comments/${id}`).then((res) => {
       setComments(res.data.reverse());
     });
   }, [id]);

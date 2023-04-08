@@ -18,7 +18,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3001/auth/verify",{
+    axios.get("https://pixtory-server.vercel.app/auth/verify",{
       headers: {
         accessToken: localStorage.getItem("token"),
       }

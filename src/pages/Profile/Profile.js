@@ -25,11 +25,11 @@ export const Profile = () => {
   })
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/auth/info/${id}`).then((response) => {
+    axios.get(`https://pixtory-server.vercel.app/auth/info/${id}`).then((response) => {
       setUser(response.data.user);
     });
 
-    axios.get(`http://localhost:3001/posts/byUserId/${id}`).then((res) => {
+    axios.get(`https://pixtory-server.vercel.app/posts/byUserId/${id}`).then((res) => {
       setUserPosts(res.data.listOfPosts);
     });
   }, []);

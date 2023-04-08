@@ -31,7 +31,7 @@ export const Posts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/posts", {
+      .get("https://pixtory-server.vercel.app/posts", {
         headers: { accessToken: localStorage.getItem("token") },
       })
       .then((response) => {
@@ -45,7 +45,7 @@ export const Posts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/posts", {
+      .get("https://pixtory-server.vercel.app/posts", {
         headers: { accessToken: localStorage.getItem("token") },
       })
       .then((response) => {

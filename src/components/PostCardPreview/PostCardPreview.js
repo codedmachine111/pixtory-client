@@ -15,7 +15,7 @@ export const PostCardPreview = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/posts/image/${props.id}`, {
+      .get(`https://pixtory-server.vercel.app/posts/image/${props.id}`, {
         responseType: "blob",
       })
       .then((res) => {
@@ -26,7 +26,7 @@ export const PostCardPreview = (props) => {
   const onLikeHandler = () => {
     axios
       .post(
-        "http://localhost:3001/likes",
+        "https://pixtory-server.vercel.app/likes",
         {
           postId: props.id,
         },

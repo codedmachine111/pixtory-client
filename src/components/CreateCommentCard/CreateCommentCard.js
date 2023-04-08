@@ -16,7 +16,7 @@ export const CreateCommentCard = (props) => {
       postId: props.postId,
     };
     
-    axios.post(`http://localhost:3001/comments`, commentObject, {headers :{
+    axios.post(`https://pixtory-server.vercel.app/comments`, commentObject, {headers :{
         accessToken: localStorage.getItem("token")
     }}).then((res) => {
         if(res.data.message === "User not Logged in"){

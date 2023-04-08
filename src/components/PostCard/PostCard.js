@@ -15,13 +15,13 @@ export const PostCard = ({ post }) => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    axios.get(`http://localhost:3001/posts/image/${id}`,{responseType: 'blob'}).then((res)=>{
+    axios.get(`https://pixtory-server.vercel.app/posts/image/${id}`,{responseType: 'blob'}).then((res)=>{
       setImage(res.data);
     })
   },[id])
 
   const onDeleteHandler =()=>{
-    axios.delete(`http://localhost:3001/posts/${id}`, {
+    axios.delete(`https://pixtory-server.vercel.app/posts/${id}`, {
       headers :{
         accessToken: localStorage.getItem("token")
       }

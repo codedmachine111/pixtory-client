@@ -27,7 +27,7 @@ export const SignUpForm = (props) => {
     };
 
     if (values.password === values.confirmPassword) {
-      axios.post(`http://localhost:3001/auth/`, userObject).then((res) => {
+      axios.post(`https://pixtory-server.vercel.app/auth/`, userObject).then((res) => {
         if (res.data.message === "User Created!") {
           alert(res.data.message);
           props.toggleAuth();
