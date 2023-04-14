@@ -3,25 +3,25 @@ import { Button } from "../Button/Button";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../App";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {WhatsappIcon, WhatsappShareButton, TwitterShareButton, TwitterIcon} from "react-share";
 
 export const PostCard = ({ post }) => {
-  const { title, postText, username, createdAt, id } = post;
+  const id = useParams();
+  const { title, postText, username, createdAt } = post;
   const date = createdAt ? new Date(createdAt).toDateString() : null;
   const {authUser} = useContext(UserContext);
   const [image, setImage] = useState(null);
 
   const navigate = useNavigate();
-
   useEffect(()=>{
-    axios.get(`https://pixtory-server.vercel.app/posts/image/${id}`,{responseType: 'blob'}).then((res)=>{
+    axios.get(`https://pixtory-server.vercel.app/posts/image/${id.id}`,{responseType: 'blob'}).then((res)=>{
       setImage(res.data);
     })
-  },[id])
+  },[])
 
-  const onDeleteHandler =()=>{
-    axios.delete(`https://pixtory-server.vercel.app/posts/${id}`, {
+  const onDeleteHandler =()=>{  
+    axios.delete(`https://pixtory-server.vercel.app/posts/${id.id}`, {
       headers :{
         accessToken: localStorage.getItem("token")
       }
@@ -50,10 +50,10 @@ export const PostCard = ({ post }) => {
           <p className="post-card-author">{username}-({date})</p>
         </div>
         <div className='post-share-buttons'>
-                    <WhatsappShareButton url={`https://localhost:3000/post/${id}`} title={`Hey there! Check out my post on Stories. A web-app where you share a picture with a memory.`} id="share-btn">
+                    <WhatsappShareButton url={`https://pixtory-server.vercel.app/post/${id.id}`} title={`Hey there! Check out my post on Stories. A web-app where you share a picture with a memory.`} id="share-btn">
                         <WhatsappIcon size={32} round={true} />
                     </WhatsappShareButton>
-                    <TwitterShareButton url={`https://localhost:3000/post/${id}`} title={`Hey there! Check out my post on Stories. A web-app where you share a picture with a memory.`}>
+                    <TwitterShareButton url={`https://pixtory-server.vercel.app/post/${id.id}`} title={`Hey there! Check out my post on Stories. A web-app where you share a picture with a memory.`}>
                         <TwitterIcon size={32} round={true} />
                     </TwitterShareButton>
                 </div>
