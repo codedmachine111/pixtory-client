@@ -27,20 +27,19 @@ export const CreatePostForm = () => {
     document.getElementsByClassName("create-post-form")[0].reset();
   };
 
-  const onSubmitHandler = (values) => {
+  const onSubmitHandler = async (values) => {
     const formData = new FormData();
     formData.append("title", values.title);
     formData.append("postText", values.postText);
     formData.append("file", fileObject);
 
-    axios
+    await axios
       .post("https://pixtory-server.vercel.app/posts", formData, {
         headers: {
           accessToken: localStorage.getItem("token"),
         },
       })
       .then((response) => {
-        console.log(response.data);
         if (response.data.message === "Post created!") {
           alert("Post created!");
           resetFormFields();
